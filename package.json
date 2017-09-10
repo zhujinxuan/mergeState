@@ -1,6 +1,6 @@
 {
   "name": "mergestate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "setState helper function for nested Array or Object in the state",
   "main": "src/index.js",
   "scripts": {
