@@ -65,17 +65,13 @@ import mergeState, { deepSlowEqual } from "mergeState";
 import assert from "assert";
 
 let prevState = {
-  oo: { a: { b: 1 }, b: { c: 1 }, c: { d: 1 } }
+  oa: { a: [1, 1], b: [1, 1], c: [1, 1] }
 };
 let diff = {
-  oo: { a: { b: 100, c: 99 } }
+  oa: { a: Object.assign([], { 1: 100 }) }
 };
 let state = mergeState(prevState, diff);
 
-assert(
-  deepSlowEqual(prevState, { oo: { a: { b: 1 }, b: { c: 1 }, c: { d: 1 } } })
-); // prevState Unchanged
-assert(deepSlowEqual(state), {
-  oo: { a: { b: 100, c: 99 }, b: { c: 1 }, c: { d: 1 } }
-}); // merge State by enumerable entries of diff
+assert(deepSlowEqual(prevState, { oa: { a: [1, 1], b: [1, 1], c: [1, 1] } })); // prevState Unchanged
+assert(deepSlowEqual(state), { oa: { a: [1, 100], b: [1, 1], c: [1, 1] } }); // merge State by enumerable entries of diff
 ```
