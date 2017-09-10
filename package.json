@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register test/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zhujinxuan/mergeState.git"
+  },
   "keywords": [
     "React",
     "Redux"

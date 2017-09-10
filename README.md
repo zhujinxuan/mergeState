@@ -2,6 +2,13 @@
 `setState` is often nasty when you unfortunately have nested structure in your React/Redux state.  
 This package makes `setState` easy with the nested Structure.  
 
+## Install 
+Just like other packages
+```
+  npm i --save-dev mergestate
+```
+The `s` is lowercased due to my mistake and I cannot change the it.  Sorry for the inconvinience.
+
 ## Functions
   * `mergeState(prevState, diff)` 
   This function return an new object with similar structure of `prevState` and with changes according to `diff`. 
