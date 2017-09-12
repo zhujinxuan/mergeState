@@ -5,7 +5,7 @@ This package makes `setState` easy with the nested Structure.
 ## Install 
 Just like other packages
 ```
-  npm i --save-dev mergestate
+  npm i --save mergestate
 ```
 The `s` is lowercased due to my mistake and I cannot change the it.  Sorry for the inconvinience.
 
