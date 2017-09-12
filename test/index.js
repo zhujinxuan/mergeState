@@ -78,3 +78,16 @@ describe("Try Twice nested", () => {
     assert(deepSlowEqual(state, checkNewState) === true);
   });
 });
+
+describe("Test DeepSlowEqual", () => {
+  it("when true", () => {
+    assert(deepSlowEqual({ a: 1 }, { a: 1 }) === true);
+  });
+  it("when false", () => {
+    assert(deepSlowEqual({ a: 2 }, { a: 1 }) === false);
+  });
+  it("additional rules", () => {
+    let rule = x => (x === 2 ? true : undefined);
+    assert(deepSlowEqual({ a: 2 }, { a: 1 }, [rule]) === true);
+  });
+});

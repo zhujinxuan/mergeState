@@ -13,8 +13,15 @@ The `s` is lowercased due to my mistake and I cannot change the it.  Sorry for t
   * `mergeState(prevState, diff)` 
   This function return an new object with similar structure of `prevState` and with changes according to `diff`. 
   `prevState` is not changed in the function.  This function searches changes by `enumerable` entries of `diff`
-  * `deepSlowEqual(state1, state2)` 
-  This function recursively compare two objects on entries with `enumerable` property
+  * `deepSlowEqual(state1, state2, [...comparers])` 
+  This function recursively compare two objects on entries with `enumerable` property. 
+  `[...comparers]` is an array of function `f(x,y)` for additional rules in
+  comparing two nodes that return `true` `false` or `undefined`.  The comparers
+  are called recursively when comparing each nodes in the trees.  If the
+  comparer return `true` or `false`, the `deepSlowEqual` will stop comparing
+  and return `true` or `false`; when the comparer return `undefined`, the
+  `deepSlowEqual` will continue. `...comparers` could be used for ignoring
+  certain types in comparing.
 
 
 ## Usage as Example
